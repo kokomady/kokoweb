@@ -1,0 +1,56 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #88c1f9; /* Dark background */
+  color: white; /* White text */
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(100, 192, 237, 0.1); /* Soft shadow */
+}
+
+h2.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #80bbf6; /* Dark gray text */
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da; /* Light border */
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px
+}
+img {
+  width: 50px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent inline spacing issues */
+  padding: auto;
+  border-radius: 8px; /* Add rounded corners */
+}
