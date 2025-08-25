@@ -16,8 +16,12 @@ const SignInComponent = () => {
     setError('');
     try {
       const response = await StudentsService.login(username, password);
-      // Redirect to ListOfStudentsComponent on success
-      navigate('/Student');
+      if (response.success) {
+        setError('Login successful!');
+        navigate('/Student');
+      } else {
+        setError(response.error || 'Invalid username or password');
+      }
     } catch (err) {
       setError('Invalid username or password');
     }

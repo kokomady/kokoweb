@@ -21,24 +21,40 @@ function getCookie(name) {
     return null;
 }
 
-const LOGIN_URL = 'http://localhost:8080/login/hello';
-const STUDENTS_GET_URL = 'http://localhost:8080/admin/getClassmate';
-const STUDENTS_SAVE_URL = 'http://localhost:8083/admin/addUpdateStudent';
+const LOGIN_URL = 'http://192.168.1.9:8080/login/sigin';
+const STUDENTS_GET_URL = 'http://192.168.1.9:8080/students/getAllStudents';
+const STUDENTS_SAVE_URL = 'http://192.168.1.9:8083/admin/addUpdateStudent';
 
 
 
 class StudentsService {
     async login(username, password) {
-        const response = await axios.post(LOGIN_URL, { username, password });
-        if (response.data && response.data.data && response.data.data.accessToken) {
-            setCookie('accessToken', response.data.data.accessToken, 1); // Store for 1 day
+        try {
+            const response = await axios.post(LOGIN_URL, { username, password });
+            if (response.status === 200 && response.data && response.data.data && response.data.data.accessToken) {
+                setCookie('accessToken', response.data.data.accessToken, 1); // Store for 1 day
+                return { success: true, data: response.data };
+            } else {
+                let errorMsg = 'Invalid password or credentials.';
+                if (response.data && response.data.message) errorMsg = response.data.message;
+                return { success: false, error: errorMsg };
+            }
+        } catch (err) {
+            let errorMsg = 'Login failed.';
+            if (err.response && err.response.data && err.response.data.message) {
+                errorMsg = err.response.data.message;
+            }
+            return { success: false, error: errorMsg };
         }
-        return response;
     }
 
     getAuthHeader() {
         const token = getCookie('accessToken');
-        return token ? { Authorization: `Bearer ${token}` } : {};
+        if (!token || token === 'undefined' || token === 'null') {
+            console.warn('No valid access token found for Authorization header');
+            return {};
+        }
+        return { Authorization: `Bearer ${token}` };
     }
 
     getAllStudents() {
@@ -47,6 +63,11 @@ class StudentsService {
 
     addStudent(studentData) {
         return axios.put(STUDENTS_SAVE_URL, studentData, { headers: this.getAuthHeader() });
+    }
+
+    async registerUser(email, userData) {
+        // userData should include: fullName, password, role, address, phone, otp
+        return axios.put(`http://192.168.1.9:8080/user/RegisterUser?email=${email}`, userData);
     }
 }
 
