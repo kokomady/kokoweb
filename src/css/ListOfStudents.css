@@ -1,0 +1,108 @@
+/* Main container */
+.student-container {
+  background-color: #88c1f9; /* site theme background */
+  width: 100%;
+  padding: 2%;
+}
+
+/* Title */
+.student-title {
+  text-align: center;
+  color: #0d47a1; /* dark blue for contrast */
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Search bar */
+.student-search {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.student-search input {
+  border-radius: 8px;
+  border: 1px solid #1976d2;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+}
+
+/* Card wrapper */
+.student-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.2);
+  background: #ffffff; /* keep content white for readability */
+}
+
+/* Card header */
+.student-card-header {
+  background: #1976d2;
+  color: white;
+  padding: 12px 20px;
+}
+
+/* Table */
+.student-table thead {
+  background: #1976d2;
+  color: #fff;
+}
+
+.student-table tbody tr {
+  transition: background 0.2s ease-in-out;
+}
+
+.student-table tbody tr:hover {
+  background: #e3f2fd;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  min-width: 70px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+}
+
+.btn-primary {
+  background-color: #1976d2;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #125aa3;
+}
+
+.btn-success {
+  background-color: #2e7d32;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #256628;
+}
+
+.btn-danger {
+  background-color: #d32f2f;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #a62828;
+}
+
+.btn-secondary {
+  background-color: #757575;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5c5c5c;
+}

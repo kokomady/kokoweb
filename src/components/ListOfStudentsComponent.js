@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import StudentService from "../services/StudentService";
+import "../css/ListOfStudents.css"; // <-- CSS file import
 
 const ListOfStudentsComponent = () => {
   const [students, setStudents] = useState([]);
@@ -54,29 +55,30 @@ const ListOfStudentsComponent = () => {
     }
   };
 
-  return (
-    <div className="container mt-5" style={{marginTop: '90px'}}>
-      <h2 className="text-center text-primary">List of Students</h2>
-      <div className="row mb-3 justify-content-end">
-        <div className="col-md-4">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search by name, class, roll no, father name, contact, email..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-          />
-        </div>
-      </div>
+  const filteredStudents = students.filter((student) => {
+    const q = search.toLowerCase();
+    return (
+      student.name?.toLowerCase().includes(q) ||
+      student.className?.toLowerCase().includes(q) ||
+      student.rollNo?.toLowerCase().includes(q) ||
+      student.fatherName?.toLowerCase().includes(q) ||
+      student.contactNo?.toLowerCase().includes(q) ||
+      student.emailId?.toLowerCase().includes(q)
+    );
+  });
 
-      <div className="card shadow-lg border-0" style={{background: 'linear-gradient(180deg, #e3f2fd 0%, #90caf9 100%)', borderRadius: '16px'}}>
-        <div className="card-header text-white" style={{background: 'linear-gradient(90deg, #1976d2 0%, #64b5f6 100%)', borderTopLeftRadius: '16px', borderTopRightRadius: '16px'}}>
+  return (
+    <div className="student-container">
+      <h2 className="student-title">List of Students</h2>
+
+      <div className="card student-card">
+        <div className="card-header student-card-header">
           <h4 className="mb-0">Student Table</h4>
         </div>
         <div className="card-body p-0">
           <div className="table-responsive">
-            <table className="table table-striped table-bordered mb-0" style={{borderRadius: '16px', overflow: 'hidden'}}>
-              <thead style={{background: 'linear-gradient(90deg, #1976d2 0%, #64b5f6 100%)', color: '#fff'}}>
+            <table className="table table-striped table-bordered mb-0 student-table">
+              <thead>
                 <tr>
                   <th>Name</th>
                   <th>Class</th>
@@ -88,34 +90,14 @@ const ListOfStudentsComponent = () => {
                 </tr>
               </thead>
               <tbody>
-                {students.filter(student => {
-                  const q = search.toLowerCase();
-                  return (
-                    student.name?.toLowerCase().includes(q) ||
-                    student.className?.toLowerCase().includes(q) ||
-                    student.rollNo?.toLowerCase().includes(q) ||
-                    student.fatherName?.toLowerCase().includes(q) ||
-                    student.contactNo?.toLowerCase().includes(q) ||
-                    student.emailId?.toLowerCase().includes(q)
-                  );
-                }).length === 0 ? (
+                {filteredStudents.length === 0 ? (
                   <tr>
                     <td colSpan="7" className="text-center text-muted py-4">
                       No students found.
                     </td>
                   </tr>
                 ) : (
-                  students.filter(student => {
-                    const q = search.toLowerCase();
-                    return (
-                      student.name?.toLowerCase().includes(q) ||
-                      student.className?.toLowerCase().includes(q) ||
-                      student.rollNo?.toLowerCase().includes(q) ||
-                      student.fatherName?.toLowerCase().includes(q) ||
-                      student.contactNo?.toLowerCase().includes(q) ||
-                      student.emailId?.toLowerCase().includes(q)
-                    );
-                  }).map((student) => (
+                  filteredStudents.map((student) => (
                     <tr key={student.id}>
                       <td>
                         {editRowId === student.id ? (

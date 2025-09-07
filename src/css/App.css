@@ -1,0 +1,21 @@
+.footer-div {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 100;
+}
+
+.container-main {
+  margin-top: 1px;
+  
+}
+
+.footer {
+  background-color: #88c1f9;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+}

@@ -1,0 +1,135 @@
+.contactus-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  background: #f8fbff;
+}
+
+.contactus-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.contactus-details {
+  flex: 1 1 340px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(33,150,243,0.08);
+  padding: 32px 28px;
+  min-width: 320px;
+}
+
+.contactus-title {
+  color: #1976d2;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.contactus-desc {
+  font-size: 1.08rem;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+.contactus-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: #222;
+}
+
+.contactus-principal {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.contactus-principal-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.12);
+}
+
+.contactus-principal-name {
+  margin-left: 16px;
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: #1976d2;
+}
+
+.contactus-form-col {
+  flex: 1 1 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+}
+
+.contactus-form {
+  background: #e3f2fd;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(33,150,243,0.10);
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactus-form-title {
+  color: #1976d2;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contactus-input, .contactus-textarea {
+  border: 1.5px solid #90caf9;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  background: #f5fafd;
+  transition: border-color 0.2s;
+}
+
+.contactus-input:focus, .contactus-textarea:focus {
+  border-color: #1976d2;
+  background: #e3f2fd;
+  outline: none;
+}
+
+.contactus-btn {
+  background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contactus-btn:hover {
+  background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+}
+
+@media (max-width: 900px) {
+  .contactus-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .contactus-details, .contactus-form-col {
+    min-width: 0;
+    padding: 18px 8px;
+  }
+}

@@ -1,0 +1,159 @@
+.homepage-bg {
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+  background: url('../resource/school.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.homepage-main {
+  max-width: 1200px;
+  margin: 2%;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(33, 150, 243, 0.08);
+  padding: 10%;
+  color: #000; /* make all text black */
+}
+
+.homepage-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+}
+
+.homepage-row-teachers {
+  margin-top: 32px;
+  gap: 32px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+}
+
+.homepage-col {
+  flex: 1 1 340px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage-col-left {
+  align-items: flex-start;
+}
+
+.homepage-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.homepage-lead {
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+}
+
+.homepage-school-img {
+  max-width: 100%;
+  max-height: 500px;
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 2px 16px rgba(33, 150, 243, 0.1);
+}
+
+.homepage-principal-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.12);
+}
+
+.homepage-principal-name {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+
+.homepage-principal-role {
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+.homepage-col-teachers {
+  align-items: flex-start;
+}
+
+.homepage-teachers-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.homepage-teachers-list {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.homepage-teacher-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5fafd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.07);
+  padding: 18px 12px;
+  min-width: 140px;
+}
+
+.homepage-teacher-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.12);
+}
+
+.homepage-teacher-name {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.homepage-teacher-subject {
+  font-size: 0.95rem;
+}
+
+.homepage-footer {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .homepage-main {
+    margin: 18px auto;
+    padding-top: 70px;
+  }
+  .homepage-title {
+    font-size: 1.6rem;
+  }
+  .homepage-lead {
+    font-size: 1rem;
+  }
+  .homepage-row,
+  .homepage-row-teachers {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .homepage-teachers-list {
+    gap: 12px;
+  }
+}

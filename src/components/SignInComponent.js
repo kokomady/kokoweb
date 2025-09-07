@@ -18,7 +18,7 @@ const SignInComponent = () => {
       const response = await StudentsService.login(username, password);
       if (response.success) {
         setError('Login successful!');
-        navigate('/Student');
+        navigate('/admin');
       } else {
         setError(response.error || 'Invalid username or password');
       }
